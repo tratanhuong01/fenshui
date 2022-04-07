@@ -1,0 +1,156 @@
+.header {
+    background-color: $color-yellow;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__mobile {
+        display: block;
+        font-size: 2.4rem;
+        cursor: pointer;
+        color: $color-red;
+        padding-right: 2rem;
+        @include min-ss(1100px) {
+            display: none;
+        }
+    }
+    &__logo {
+        padding-right: 6.3rem;
+    }
+    &__input {
+        @include min-ss(1100px) {
+            margin-right: -4rem;
+        }
+        position: relative;
+        z-index: 1;
+        input {
+            width: 23rem;
+            display: none;
+            @include min-ss(1100px) {
+                display: block;
+            }
+            @include min-sm {
+                width: 28.9rem;
+            }
+            padding-right: 3rem;
+            padding: 0.8rem;
+            background: $white;
+            border-radius: 0.6rem;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 1.3rem;
+            border: none;
+            @include max-ss(1100px) {
+                margin: 2.4rem 0rem;
+            }
+        }
+        span {
+            font-size: 2rem;
+            cursor: pointer;
+            @include max-ss(1100px) {
+                color: $color-red;
+            }
+            @include min-ss(1100px) {
+                font-size: 1.4rem;
+                @include absoluteCenterRight(0.8rem);
+            }
+        }
+    }
+    &__menu {
+        &--show {
+            transform: translateX(0%) !important;
+        }
+        @include max-ss(1100px) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            background-color: $color-yellow;
+            width: 30rem;
+            height: 100vh;
+            transform: translateX(-100%);
+        }
+        @include min-ss(1100px) {
+            position: relative;
+            flex: 1;
+            &::before {
+                content: "";
+                position: absolute;
+                left: -7rem;
+                top: 0;
+                border-left: 3.5rem solid transparent;
+                border-right: 3.5rem solid $color-red;
+                border-bottom: 3.5rem solid transparent;
+                border-top: 3.5rem solid transparent;
+            }
+            padding-left: 3.58rem;
+            margin-left: 2rem;
+            background-color: $color-red;
+        }
+        ul {
+            @include min-ss(1100px) {
+                display: flex;
+                align-items: center;
+            }
+            li {
+                position: relative;
+                @include max-ss(1100px) {
+                    @include flexJustifyAlign(flex-start,center);
+                    padding-left: 2rem;
+                }
+                padding: 1.55rem 1.5rem 1.25rem 0rem;
+                a {
+                    @include max-ss(1100px) {
+                        @include flexJustifyAlign(flex-start,center);
+                    }
+                    @include min-ss(1100px) {
+                        display: block;
+                    }
+                    svg {
+                        width: 2rem;
+                        height: 2rem;
+                        margin: auto;
+                        display: block;
+                        margin: 0 auto 0.4rem auto;
+                        @include max-ss(1100px) {
+                            fill: $color-red;
+                            & path {
+                                fill: $color-red;
+                            }
+                        }
+                    }
+                    span {
+                        display: block;
+                        text-align: center;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 1.2rem;
+                        white-space: nowrap;
+                        line-height: 1.8rem;
+                        font-family: $font-second;
+                        @include max-ss(1100px) {
+                            margin-left: 2rem;
+                        }
+                        @include min-ss(1100px) {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        &--close {
+            font-size: 2.8rem;
+            cursor: pointer;
+            position: absolute;
+            top: 1.2rem;
+            display: none;
+            @include max-ss(1100px) {
+                display: block;
+            }
+            right: 1.2rem;
+        }
+        
+    }
+}

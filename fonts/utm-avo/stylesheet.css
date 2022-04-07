@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "UTM Avo";
+    src: url("UTM-Avo.ttf") format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "UTM Avo";
+    src: url("UTM-AvoBold.ttf") format('truetype');
+    font-style: normal;
+    font-display: swap;
+}

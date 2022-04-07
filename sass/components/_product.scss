@@ -1,0 +1,189 @@
+.product-list-top {
+    margin-top: 5.3rem;
+}
+
+.box-product {
+    padding: 5.7rem 2.2rem 3.2rem 2.2rem;
+    border: 0.1rem solid $color-red;
+    @include max-lg {
+        border-left: none;
+        border-right: none;
+    }
+    position: relative;
+    &__top {
+        position: absolute;
+        top: -2.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        p {
+            font-family: $font-second;
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 2.5rem;
+            letter-spacing: 0.04rem;
+            height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25.5rem;
+            color: $white;
+            background-color: $color-red;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: -4.6rem;
+                top: -0.15rem;
+                border-right: 2.3rem solid $color-red;
+                border-bottom: 2.3rem solid transparent;
+                border-top: 2.3rem solid transparent;
+                border-left: 2.3rem solid transparent;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                right: -4.6rem;
+                top: -0.15rem;
+                border-right: 2.3rem solid transparent;
+                border-bottom: 2.3rem solid transparent;
+                border-top: 2.3rem solid transparent;
+                border-left: 2.3rem solid $color-red;
+            }
+        }
+    }
+}
+
+.list-product {
+    overflow: hidden;
+    &__main {
+        padding: 0rem 2.3rem;
+    }
+    &__wrapper {
+        @include flexJustifyAlign(flex-start,center);
+        margin-right: -4.1rem;
+        transition: all 0.6s;
+    }
+    &__item {
+        width: calc(100%);
+        @include min-ss(550px) {
+            width: calc(50% - 2.1rem);
+        }
+        @include min-md {
+            width: calc((100% / 3) - 2.1rem);
+            margin-right: 2.1rem;
+        }
+        @include min-ss(1100px) {
+            width: calc(25% - 4.1rem);
+            margin-right: 4.1rem;
+        }
+        padding: 2rem;
+        background-color: $white;
+        flex-shrink: 0;
+        &--image {
+            width: 100%;
+            img {
+                width: 100%;
+                border-radius: 0.6rem;
+            }
+        }
+        &--title {
+            margin-top: 0.9rem;
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 158.53%;
+            color: $black;
+            text-align: center;
+        }
+        &--price {
+            font-family: 'UTM Avo';
+            font-weight: 700;
+            font-size: 1.6rem;
+            text-align: center;
+            line-height: 158.53%;
+            color: $color-red;
+        }
+    }   
+    &__pagination {
+        @include flexJustifyAlign(center,center);
+        padding: 3.2rem 0rem 0rem 0rem;
+        gap: 0.5rem;
+        li {
+            width: 2.3rem;
+            height: 0.8rem;
+            border-radius: 0.6rem;
+            background-color: #F5D4B7;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        &--active {
+            width: 6.7rem !important;
+            background-color: $color-red !important;
+        }
+    }
+    &__child {
+        width: 100%;
+        padding: 2rem;
+        background-color: $white;
+    }
+    &__top {
+        background-color: $white;
+        margin: 3rem 0rem;
+        @include flexJustifyAlign(flex-start,center);
+        &--left {
+            @include flexJustifyAlign(center,center);
+            width: 4.7rem;
+            height: 4.7rem;
+            background-color: $color-red;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                margin-top: 0.2rem;
+                height: 0.25rem;
+                width: 100%;
+                background-color: $color-red;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-top: 0.4rem;
+                transform: translateX(-50%);
+                border-left: 0.3rem solid transparent;
+                border-top: 0.3rem solid $color-red;
+                border-bottom: 0.3rem solid transparent;
+                border-right: 0.3rem solid transparent;
+            }
+        }
+        &--right {
+            padding-left: 2.1rem;
+            font-family: 'UTM Avo';
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 2.3rem;
+            flex: 1;
+            @include flexJustifyAlign(flex-start,center);
+        }
+    }
+    &__container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        @include min-ss(500px) {
+            grid-template-columns: auto auto;
+        }
+        @include min-md {
+            grid-template-columns: auto auto auto;
+        }
+        @include min-ss(850px) {
+            grid-template-columns: auto auto auto auto;
+        }
+        @include min-lg {
+            grid-template-columns: auto auto auto auto auto;
+        }
+        gap: 1.8rem 2rem;
+    }
+}
