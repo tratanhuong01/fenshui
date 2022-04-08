@@ -45,6 +45,9 @@
             @include max-ss(1100px) {
                 margin: 2.4rem 0rem;
             }
+            &:focus {
+                outline: 0.2rem solid $color-red;
+            }
         }
         span {
             font-size: 2rem;

@@ -34,22 +34,21 @@
         visibility: visible;
     }
     &__search {
-        max-width: 30rem;
         display: none;
         position: relative;
-        @include flexJustifyAlign(center,center);
         &--show {
-            display: flex !important;
+            @include flexJustifyAlign(center,center);
             position: fixed;
             top: 50%;
+            z-index: 999;
             left: 50%;
             transform: translate(-50%, -50%);
+            transition: all 1s;
         }
         &--close {
             position: absolute;
             top: 2rem;
             right: 2rem;
-            color: white;
             font-size: 2.8rem;
             cursor: pointer;
         }
@@ -64,4 +63,34 @@
 
 .transition-5s {
     transition: all 0.5s;
+}
+
+.search {
+    &__wrapper {
+        width: 30rem;
+        padding: 2.4rem;
+        background-color: $white;
+        position: relative;
+    }
+    &-input {
+        margin-top: 5rem;
+        width: 100%;
+        input {
+            color: #444444;
+            width: 100%;
+            padding: 1.6rem;
+            border: 0.1rem solid gray;
+        }
+    }
+    &-button {
+        text-align: right;
+        button {
+            border: none;
+            padding: 1.6rem;
+            margin-top: 2rem;
+            background-color: $color-red;
+            color: $white;
+            font-size: 1.5rem;
+        }
+    }
 }

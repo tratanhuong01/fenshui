@@ -60,7 +60,19 @@
     }
     &__wrapper {
         @include flexJustifyAlign(flex-start,center);
-        margin-right: -4.1rem;
+        @include max-ss(550px) {
+            margin-right: 0;
+        }
+        @include min-ss(550px) {
+            margin-right: -2.1rem;
+        }
+        @include min-md {
+            margin-right: -2.1rem;
+        }
+        @include min-ss(1100px) {
+            margin-right: -4.1rem;
+        }
+        margin-bottom: 0 !important;
         transition: all 0.6s;
     }
     &__item {
@@ -104,20 +116,28 @@
         }
     }   
     &__pagination {
-        @include flexJustifyAlign(center,center);
-        padding: 3.2rem 0rem 0rem 0rem;
-        gap: 0.5rem;
-        li {
-            width: 2.3rem;
-            height: 0.8rem;
-            border-radius: 0.6rem;
-            background-color: #F5D4B7;
-            cursor: pointer;
-            transition: all 0.5s;
-        }
-        &--active {
-            width: 6.7rem !important;
-            background-color: $color-red !important;
+        ul {
+            position: relative !important;
+            bottom: 0 !important;
+            @include flexJustifyAlign(center,center);
+            padding: 3.2rem 0rem 0rem 0rem;
+            gap: 0.5rem;
+            li {
+                width: 2.3rem !important;
+                height: 0.8rem !important;
+                border-radius: 0.6rem;
+                margin: 0 !important;
+                background-color: #F5D4B7;
+                cursor: pointer;
+                transition: all 0.5s;
+                button {
+                    display: none !important;
+                }
+            }
+            & .slick-active {
+                width: 6.7rem !important;
+                background-color: $color-red !important;
+            }
         }
     }
     &__child {

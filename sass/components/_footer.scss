@@ -52,11 +52,12 @@
     &-main {
         @include min-sm {
             @include flexJustifyAlign(space-between,center);
-            flex-wrap: wrap;
             gap: 2rem 0rem;
+            flex-wrap: wrap;
         }
         @include min-lg {
             gap: 2rem;
+            flex-wrap: nowrap;
         }
         &__item {
             width: 100%;
