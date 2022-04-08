@@ -6,10 +6,9 @@ const headerMobile = document.querySelector('.header__mobile');
 const headerInputSearch = document.querySelector('.header__input--search');
 const modalSearchClose = document.querySelector('.modal__search--close');
 
-
 const clickOutSide = () => {
     document.body.style = '';
-    modal.classList.remove('modal__active');
+    modal.classList.remove('modal__active', 'modal__black', 'modal__white');
     headerMenu.classList.remove('header__menu--show');
     modal.removeEventListener('click', clickOutSide);
     modalSearch.classList.remove('modal__search--show');
@@ -21,9 +20,9 @@ let isClickSearch;
 headerMobile.addEventListener('click', () => {
     isClick ? clickOutSide() : (
         document.body.style.overflow = 'hidden',
-        modal.classList.add('modal__active'),
-        headerMenu.classList.add('header__menu--show', 'transition-5s').
-            modal.addEventListener('click', clickOutSide)
+        modal.classList.add('modal__active', 'modal__black'),
+        headerMenu.classList.add('header__menu--show', 'transition-5s'),
+        modal.addEventListener('click', clickOutSide)
     )
 });
 
@@ -31,8 +30,9 @@ headerMenuClose.addEventListener('click', () => { clickOutSide() });
 
 headerInputSearch.addEventListener('click', () => {
     isClickSearch ? clickOutSide() : (
+        document.body.style.overflow = 'hidden',
         modalSearch.classList.add('modal__search--show'),
-        modal.classList.add('modal__active'),
+        modal.classList.add('modal__active', 'modal__white'),
         modal.addEventListener('click', clickOutSide)
     )
 })

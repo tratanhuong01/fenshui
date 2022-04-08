@@ -70,9 +70,16 @@ img {
   visibility: hidden;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  background-color: rgba(0, 0, 0, 0.439);
   left: 0;
   z-index: 90;
+}
+
+.modal__black {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__white {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .modal__active {
@@ -126,6 +133,8 @@ img {
 .search__wrapper {
   width: 30rem;
   padding: 2.4rem;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   background-color: #ffffff;
   position: relative;
 }
@@ -139,7 +148,7 @@ img {
   color: #444444;
   width: 100%;
   padding: 1.6rem;
-  border: 0.1rem solid gray;
+  border: 0.1rem solid rgba(0, 0, 0, 0.3);
 }
 
 .search-button {
@@ -433,8 +442,22 @@ img {
   background-color: #ffffff;
 }
 
+.blog__item--image {
+  width: 100%;
+  overflow: hidden;
+}
+
 .blog__item--image img {
   width: 100%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.blog__item--image img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .blog__item--title {
@@ -650,11 +673,22 @@ img {
 
 .list-product__item--image {
   width: 100%;
+  display: block;
+  overflow: hidden;
 }
 
 .list-product__item--image img {
   width: 100%;
   border-radius: 0.6rem;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.list-product__item--image img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .list-product__item--title {
@@ -881,6 +915,12 @@ img {
   background-color: #ffffff;
   font-size: 1.4rem;
   line-height: 1.5rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.banner__top--left ul li:hover {
+  color: #A3080C;
 }
 
 .banner__top--left--active {

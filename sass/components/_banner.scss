@@ -30,6 +30,10 @@
                     background-color: $white;
                     font-size: 1.4rem;
                     line-height: 1.5rem;
+                    transition: all 0.5s;
+                    &:hover {
+                        color: $color-red;
+                    }
                 }
             }
             &--active {

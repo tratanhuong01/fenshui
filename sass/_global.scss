@@ -26,9 +26,14 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s;
-    background-color: rgba(0, 0, 0, 0.439);
     left: 0;
     z-index: 90;
+    &__black {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    &__white {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
     &__active {
         opacity: 1 !important;
         visibility: visible;
@@ -69,6 +74,7 @@
     &__wrapper {
         width: 30rem;
         padding: 2.4rem;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         background-color: $white;
         position: relative;
     }
@@ -79,7 +85,7 @@
             color: #444444;
             width: 100%;
             padding: 1.6rem;
-            border: 0.1rem solid gray;
+            border: 0.1rem solid rgba(0, 0, 0, 0.3);
         }
     }
     &-button {

@@ -93,9 +93,15 @@
         flex-shrink: 0;
         &--image {
             width: 100%;
+            display: block;
+            overflow: hidden;
             img {
                 width: 100%;
                 border-radius: 0.6rem;
+                transition: transform 0.5s;
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
         &--title {
