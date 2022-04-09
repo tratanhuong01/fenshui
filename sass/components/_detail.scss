@@ -1,0 +1,245 @@
+.detail {
+    &-product {
+        margin: 2rem 0rem;
+        background-color: $white;
+        @include min-ss(930px) {
+            @include flexJustifyAlign(flex-start,flex-start);
+        }
+        &__left {
+            @include max-md {
+                display: block !important;
+                img {
+                    width: 100%;
+                }
+            }
+            @include max-ss(930px) {
+                display: flex;
+            }
+            &--end {
+                margin: 1.6rem auto;
+                gap: 2rem;
+                @include flexJustifyAlign(center,center);
+                li {
+                    cursor: pointer;
+                    &:hover {
+                        color: $color-red;
+                    }
+                    div {
+                        width: 8.5rem;
+                        height: 6.2rem;
+                        @include flexJustifyAlign(center,center);
+                        font-size: 4rem;
+                        border: 0.1rem solid #ddd;
+                        margin-bottom: 0.5rem;
+                    }
+                    p {
+                        font-size: 1.2rem;
+                        text-align: center;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        &__right {
+            flex: 1;
+            padding-bottom: 0rem;
+            padding: 2rem;
+            &--name {
+                font-size: 2.4rem;
+                color: #2e3a47;
+                word-break: break-word;
+            }
+            &--price {
+                color: $color-red;
+                font-size: 2.4rem;
+                font-weight: bold;
+                margin-bottom: 1.2rem;
+                padding: 2rem 0rem;
+            }
+            &--amount {
+                @include flexJustifyAlign(flex-start,center);
+                input {
+                    width: 3.6rem;
+                    height: 3.6rem;
+                    border: 0.1rem solid $background;
+                    text-align: center;
+                }
+                div {
+                    padding-left: 0.2rem;
+                    span {
+                        border: 0.1rem solid $background;
+                        @include flexJustifyAlign(center,center);
+                        &:hover {
+                            background-color: $color-yellow;
+                        }
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        &:nth-child(1) {
+                            margin-bottom: 0.2rem;
+                        }
+                    }
+                }
+            }
+            &--table {
+                tr {
+                    td {
+                        padding: 0.5rem;
+                        &:nth-child(1) {
+                            width: 11rem;
+                        }
+                    }
+                }
+            }
+            &--button {
+                margin: 2rem 0rem;
+                @include min-ss(1100px) {
+                    @include flexJustifyAlign(space-between,center);
+                }
+                gap: 3rem;
+                button {
+                    @include min-ss(1100px) {
+                        width: 50%;
+                    }
+                    border: none;
+                    color: $white;
+                    font-size: 2rem;
+                    padding: 0.8rem;
+                    cursor: pointer;
+                    &:nth-child(1) {
+                        background-color: #a0522d;
+                        @include max-ss(1100px) {
+                            margin-bottom: 1rem;
+                        }
+                        &:hover {
+                            background-color: #bd5b2d;
+                        }
+                    }
+                    &:nth-child(2) {
+                        background-color: $color-red;
+                        &:hover {
+                            background-color: $color-red-hover;
+                        }
+                    }
+                    transition: all 0.5s;
+                }
+            }
+            &--form {
+                background-color: $color-yellow;
+                padding: 1.2rem;
+                padding-bottom: 3rem;
+                p {
+                    margin-bottom: 0.5rem;
+                    font-size: 1.6rem;
+                }
+                div {
+                    display: flex;
+                    input {
+                        background-color: #efefef;
+                        height: 3.6rem;
+                        padding: 1rem;
+                        width: 60%;
+                        @include min-lg {
+                            width: 80%;
+                        }
+                        border: 0.1rem solid #d9d9d9
+                    }
+                    button {
+                        border: none;
+                        height: 3.6rem;
+                        flex: 1;
+                        color: $white;
+                        @include flexJustifyAlign(center,center);
+                        font-weight: bold;
+                        background-color: #a0522d;
+                    }
+                }
+            }
+            &--description {
+                h3 {
+                    font-size: 1.5rem;
+                }
+                margin-top: 1.6rem;
+                padding: 1.5rem;
+                border: 0.1rem solid #efefef;
+                p {
+                    padding: 0.5rem 0rem;
+                }
+            }
+        }
+    }
+    &-description {
+        padding: 1.6rem;
+        margin-bottom: 3rem;
+        background-color: $white;
+        &__top {
+            font-size: 1.8rem;
+            color: #333;
+            div {
+                margin-top: 0.5rem;
+                @include flexJustifyAlign(flex-start,center);
+                span {
+                    display: block;
+                    &:nth-child(1) {
+                        width: 12.7rem;
+                        background-color: #333;
+                        height: 0.3rem;
+                    }
+                    &:nth-child(2) {
+                        flex: 1;
+                        height: 0.1rem;
+                        background-color: gray;
+                    }
+                }
+            }
+        }
+        &__main {
+            @include min-md {
+                display: flex;
+            }
+            &--left {
+                @include min-md {
+                    width: calc((7 / 12) * 100%);
+                }
+                padding-right: 4rem;
+                & > p {
+                    margin-top: 2rem;
+                }
+            }
+            &--right {
+                @include max-md {
+                    margin-top: 3rem;
+                    margin-bottom: 3rem;
+                }
+                @include min-md {
+                    width: calc((5 / 12) * 100%);
+                }
+                ul {
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}
+
+.item__video {
+    margin-top: 1rem;
+    display: block;
+    width: 100%;
+    position: relative;
+    span {
+        position: absolute;
+        top: 50%;
+        z-index: 19;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: block;
+        width: 6rem;
+        border-radius: 100rem;
+        border: 0.2rem solid $white;
+        @include flexJustifyAlign(center,center);
+        height: 6rem;
+        font-size: 3rem;
+        color: $white;
+    }
+}

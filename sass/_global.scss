@@ -70,6 +70,14 @@
     transition: all 0.5s;
 }
 
+.text-green {
+    color: #2ecc71;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
 .search {
     &__wrapper {
         width: 30rem;
@@ -99,4 +107,41 @@
             font-size: 1.5rem;
         }
     }
+}
+
+.product-list-single {
+    margin-bottom: 3rem;
+    background-color: $white;
+    &__top {
+        padding: 4rem 0rem;
+        div {
+            position: relative;
+            border-bottom: 0.1rem solid #ddd;
+            span {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #444444;
+            position: absolute;
+            top: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 1rem 2rem; 
+            background-color: $white;
+            }
+        }
+    }
+}
+
+.preview {
+    position: fixed;
+    z-index: 999999 !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: none;
+}
+
+.fancybox__container {
+    z-index: 999999 !important;
 }

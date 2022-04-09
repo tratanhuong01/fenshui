@@ -6,6 +6,14 @@ const headerMobile = document.querySelector('.header__mobile');
 const headerInputSearch = document.querySelector('.header__input--search');
 const modalSearchClose = document.querySelector('.modal__search--close');
 
+const orderUlLi = document.getElementsByClassName('order__ul--li');
+const orderGroup = document.querySelector('.order__group');
+const orderPrice = document.querySelector('.order__price');
+const orderColor = document.querySelector('.order__color');
+const orderValid = document.querySelector('.order__valid');
+const orderPosition = document.querySelector('.order__position');
+const listOrder = [orderGroup, orderPrice, orderColor, orderValid, orderPosition];
+
 const clickOutSide = () => {
     document.body.style = '';
     modal.classList.remove('modal__active', 'modal__black', 'modal__white');
@@ -80,4 +88,69 @@ $(document).ready(function () {
             }
         ]
     });
+});
+
+if (orderUlLi.length > 0) {
+    const clickOutSideOrder = (e) => {
+        if (!document.querySelector('.order').contains(e.target)) {
+            listOrder.forEach((el_) => {
+                el_.style.display = 'none';
+            });
+        }
+    }
+    [...orderUlLi].forEach((el, index) => {
+        el.addEventListener('click', (event) => {
+            event.stopPropagation();
+            if (listOrder[index].style.display === 'none') {
+                listOrder[index].style.display = 'block';
+                window.addEventListener('click', clickOutSideOrder)
+            }
+            else {
+                if (el.children[2]) {
+                    if (!el.children[2].contains(event.target)) {
+                        listOrder[index].style.display = 'none';
+                        window.removeEventListener('click', clickOutSideOrder);
+                    }
+                }
+            }
+            listOrder.forEach((el_, index_) => {
+                if (index !== index_) {
+                    el_.style.display = 'none';
+                }
+            })
+        });
+    })
+}
+
+// Initialise Carousel
+const mainCarousel = new Carousel(document.querySelector("#mainCarouselImage"), {
+    Dots: false,
+});
+
+// const thumbCarousel = new Carousel(document.querySelector("#thumbCarousel"), {
+//     Sync: {
+//         target: mainCarousel,
+//         friction: 0,
+//     },
+//     Dots: false,
+//     Navigation: false,
+//     center: true,
+//     slidesPerPage: 1,
+//     infinite: false,
+// });
+
+// Customize Fancybox
+Fancybox.bind('[data-fancybox="gallery-image"]', {
+    Carousel: {
+        on: {
+            change: (that) => {
+                mainCarousel.slideTo(mainCarousel.findPageForSlide(that.page), {
+                    friction: 0,
+                });
+            },
+        },
+    },
+    Thumbs: {
+        autoStart: false,
+    },
 });
