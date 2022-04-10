@@ -143,8 +143,14 @@
     <section class="wrapper">
         <div class="detail-product">
             <div class="detail-product__left">
-                <div class="detail-product__left--image show">
-                    <img src="./images/detail-product.jpeg" alt="" srcset="">
+                <div class="detail-product__left--image">
+                    <a data-fancybox-trigger="gallery-image" href="javascript:;">
+                        <img src="./images/detail-product.jpeg" class="detail-product__left--preview__" alt=""
+                            srcset="">
+                    </a>
+                    <div class="detail-product__left--preview">
+
+                    </div>
                 </div>
                 <ul class="detail-product__left--end">
                     <a data-fancybox-trigger="gallery-image" href="javascript:;">
@@ -155,12 +161,14 @@
                             <p>Xem nhiều ảnh</p>
                         </li>
                     </a>
-                    <li>
-                        <div>
-                            <span class="bx bx-play-circle"></span>
-                        </div>
-                        <p>Video</p>
-                    </li>
+                    <a href="https://youtu.be/zRJB9wV0scU" data-fancybox data-type="iframe">
+                        <li>
+                            <div>
+                                <span class="bx bx-play-circle"></span>
+                            </div>
+                            <p>Video</p>
+                        </li>
+                    </a>
                 </ul>
             </div>
             <div class="detail-product__right">
@@ -248,7 +256,7 @@
                             <span></span>
                         </div>
                     </div>
-                    <a href="" class="item__video">
+                    <a href="https://youtu.be/zRJB9wV0scU" class="item__video" data-fancybox data-type="iframe">
                         <img src="./images/video.jpeg" alt="" srcset="">
                         <span><i class='bx bx-play'></i></span>
                     </a>
@@ -576,16 +584,7 @@
         </div>
     </section>
 
-    <section class="preview" id="mainCarouselVideo">
-        <div class="carousel">
-            <div class="carousel-slide" data-src="https://lipsum.app/id/1/900x600" data-fancybox="gallery-video">
-                <img src="https://lipsum.app/id/1/600x400" />
-            </div>
-        </div>
-    </section>
-
-    <script src="./js/zoom-image.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/zoomImage.js"></script>
     <script src="./js/index.js"></script>
 
 </body>

@@ -145,3 +145,10 @@
 .fancybox__container {
     z-index: 999999 !important;
 }
+
+.img-zoom-lens {
+    position: absolute;
+    cursor: pointer;
+    width: 20rem;
+    height: 20rem;
+}

@@ -198,6 +198,13 @@ img {
   z-index: 999999 !important;
 }
 
+.img-zoom-lens {
+  position: absolute;
+  cursor: pointer;
+  width: 20rem;
+  height: 20rem;
+}
+
 .header {
   background-color: #FFF1E2;
   position: sticky;
@@ -484,6 +491,7 @@ img {
 
 .blog__item--image {
   width: 100%;
+  border-radius: 0.8rem;
   overflow: hidden;
 }
 
@@ -890,10 +898,10 @@ img {
 .order__main {
   z-index: 33;
   top: 100%;
-  margin-top: 2rem;
+  margin-top: 0.3rem;
   left: 0;
   background-color: #ffffff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 @media all and (min-width: 768px) {
@@ -905,6 +913,12 @@ img {
 @media all and (max-width: 1024px) {
   .order__main {
     width: 100% !important;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .order__main {
+    margin-top: 2rem;
   }
 }
 
@@ -951,7 +965,7 @@ img {
 }
 
 .order__checkbox::before {
-  top: -21%;
+  top: -4rem;
 }
 
 .order__checkbox > div {
@@ -1066,6 +1080,20 @@ img {
     align-items: flex-start;
     justify-content: flex-start;
   }
+}
+
+.detail-product__left--image {
+  position: relative;
+}
+
+.detail-product__left--preview {
+  display: none;
+  position: absolute;
+  width: 40rem;
+  height: 40rem;
+  left: 100%;
+  margin-left: 2rem;
+  top: 0;
 }
 
 @media all and (max-width: 768px) {

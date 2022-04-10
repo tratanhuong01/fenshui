@@ -99,10 +99,21 @@ if (orderUlLi.length > 0) {
         }
     }
     [...orderUlLi].forEach((el, index) => {
-        el.addEventListener('click', (event) => {
+        el.addEventListener('click', async (event) => {
             event.stopPropagation();
             if (listOrder[index].style.display === 'none') {
-                listOrder[index].style.display = 'block';
+                if (el.children[2]) {
+                    if (!el.children[2].contains(event.target)) {
+                        listOrder[index].style.display = 'block';
+                    }
+                }
+                [...listOrder[index].children].forEach(el__ => {
+                    if (el__.nodeName === "BUTTON") {
+                        el__.addEventListener('click', () => {
+                            listOrder[index].style.display = 'none';
+                        })
+                    }
+                });
                 window.addEventListener('click', clickOutSideOrder)
             }
             else {
@@ -122,35 +133,4 @@ if (orderUlLi.length > 0) {
     })
 }
 
-// Initialise Carousel
-const mainCarousel = new Carousel(document.querySelector("#mainCarouselImage"), {
-    Dots: false,
-});
 
-// const thumbCarousel = new Carousel(document.querySelector("#thumbCarousel"), {
-//     Sync: {
-//         target: mainCarousel,
-//         friction: 0,
-//     },
-//     Dots: false,
-//     Navigation: false,
-//     center: true,
-//     slidesPerPage: 1,
-//     infinite: false,
-// });
-
-// Customize Fancybox
-Fancybox.bind('[data-fancybox="gallery-image"]', {
-    Carousel: {
-        on: {
-            change: (that) => {
-                mainCarousel.slideTo(mainCarousel.findPageForSlide(that.page), {
-                    friction: 0,
-                });
-            },
-        },
-    },
-    Thumbs: {
-        autoStart: false,
-    },
-});

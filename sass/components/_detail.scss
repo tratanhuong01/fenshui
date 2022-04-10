@@ -6,6 +6,18 @@
             @include flexJustifyAlign(flex-start,flex-start);
         }
         &__left {
+            &--image {
+                position: relative;
+            }
+            &--preview {
+                display: none;
+                position: absolute;
+                width: 40rem;
+                height: 40rem;
+                left: 100%;
+                margin-left: 2rem;
+                top: 0;
+            }
             @include max-md {
                 display: block !important;
                 img {
