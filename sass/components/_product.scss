@@ -32,22 +32,24 @@
             &::before {
                 content: "";
                 position: absolute;
-                left: -4.6rem;
-                top: -0.15rem;
-                border-right: 2.3rem solid $color-red;
-                border-bottom: 2.3rem solid transparent;
-                border-top: 2.3rem solid transparent;
-                border-left: 2.3rem solid transparent;
+                left: -2.2rem;
+                transform: scale(1.03);
+                top: 0rem;
+                border-right: 2.25rem solid transparent;
+                border-bottom: 2.25rem solid transparent;
+                border-top: 2.25rem solid transparent;
+                border-right: 2.25rem solid $color-red;
             }
             &::after {
                 content: "";
                 position: absolute;
-                right: -4.6rem;
-                top: -0.15rem;
-                border-right: 2.3rem solid transparent;
-                border-bottom: 2.3rem solid transparent;
-                border-top: 2.3rem solid transparent;
-                border-left: 2.3rem solid $color-red;
+                right: -4.5rem;
+                transform: scale(1.03);
+                top: 0rem;
+                border-right: 2.25rem solid transparent;
+                border-bottom: 2.25rem solid transparent;
+                border-top: 2.25rem solid transparent;
+                border-left: 2.25rem solid $color-red;
             }
         }
     }
