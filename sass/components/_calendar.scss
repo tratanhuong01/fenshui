@@ -1,0 +1,103 @@
+.calendar {
+    &__title {
+        font-size: 2.8rem;
+        margin-bottom: 0.8rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    padding: 1rem 1.2rem;
+    background-color: $white;
+    &__list {
+        width: 30%;
+    }
+    &__main {
+        flex: 1;
+    }
+    &__category {
+        width: 100%;
+        @include flexJustifyAlign(flex-start,center); 
+        li {
+            font-size: 1.5rem;
+            padding: 1rem 3rem;
+            position: relative;
+            border-bottom: 0.4rem solid rgb(205, 204, 204);
+            border-top: 0.1rem solid rgb(205, 204, 204);
+            &:last-child {
+                flex: 1;
+            }
+        }
+        &--active {
+            background-color: rgb(233, 230, 230);
+            border-bottom: 0.4rem solid $color-red !important;
+        }
+    }
+    &__option {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        li {
+            width: calc(25% - 2rem);
+            select {
+                width: 100%;
+                padding: 1rem;
+            }
+            button {
+                width: 100%;
+                padding: 1.15rem;
+                font-weight: bold;
+                color: $white;
+                background-color: $color-red;
+                border: none;
+            }
+        }
+    }
+    &__content {
+        margin-top: 1rem;
+        background: url('../../images/calendar.png') repeat;
+        &--top {
+            @include flexJustifyAlign(center,center);
+            padding: 1rem;
+            gap: 4rem;
+            color: $color-red;
+            div {
+                font-weight: 600;
+            }
+            span {
+                font-size: 2rem;
+                cursor: pointer;
+            }
+        }
+        &--day--number {
+            text-align: center;
+            font-size: 10rem;
+            color: $color-red;
+            font-weight: bold;
+            margin: 1rem 0rem;
+        }
+        &--day--text {
+            margin-bottom: 1rem;
+            color: $color-red;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            font-size: 2rem;
+        }
+        &--footer {
+            margin-top: 5rem;
+            text-align: center;
+            font-size: 1.3rem;
+            color: $color-red;
+            margin-bottom: 0.1rem;
+            font-style: italic;
+            &--type {
+                color: $color-red;
+                font-size: 1.3rem;
+                text-align: center;
+                font-style: italic;
+            }
+        }
+    }
+}
