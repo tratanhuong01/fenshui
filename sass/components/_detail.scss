@@ -233,8 +233,10 @@
         }
     }
     &-blog {
-        display: flex;
-        gap: 2.8rem;
+        @include min-ss(1100px) {
+            display: flex;
+            gap: 2.8rem;
+        }
         &__left {
             flex: 1;
             &--content {
@@ -261,15 +263,144 @@
                     margin: 1rem 0rem;
                 }
             }
+            &--news {
+                &--item {
+                    position: relative;
+                    background-color: $white;
+                    @include flexJustifyAlign(flex-start,center);
+                    padding: 4rem 1.6rem;
+                    margin-bottom: 1rem;
+                    & > a {
+                        display: block;
+                        width: 25%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    & > div {
+                        padding-left: 2rem;
+                        flex: 1;
+                        p {
+                            &:nth-child(1) {
+                                font-weight: bold;
+                                margin-bottom: 1.2rem;
+                                font-size: 2rem;
+                                a {
+                                    color: $color-red;
+                                }
+                            }
+                            &:nth-child(2) {
+                                font-weight: 500;
+                                font-size: 1.4rem;
+                            }
+                        }
+
+                    }
+                    & > button {
+                        position: absolute;
+                        padding: 0.8rem 1.6rem;
+                        background-color: $white;
+                        bottom: 1rem;
+                        color: $color-red;
+                        border: 0.2rem solid $color-red;
+                        right: 1rem;
+                        transition: all 0.5s;
+                        @include flexJustifyAlign(center,center);
+                        &:hover {
+                            background-color: $color-red;
+                            color: $white;
+                        }
+                        i {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
         }
         &__right {
-            width: 25%;
+            @include max-ss(1100px) {
+                margin-top: 2rem;
+            }
+            @include min-ss(1100px) {
+                width: 25%;
+            }
             &--top {
                 margin: auto !important;
             }
             &--catelog {
+                margin-top: 2rem;
+                background-color: $white;
                 & > li {
+                    position: relative;
+                    &:first-child {
+                        padding-top: 2rem;
+                    }
                     padding: 1rem;
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                    &:hover > a {
+                        color: $color-red;
+                    }
+                    & > span {
+                        @include flexJustifyAlign(center,center);
+                        width: 2.8rem;
+                        height: 2.8rem;
+                        position: absolute;
+                        right: 1rem;
+                        background-color: rgb(244, 238, 238);
+                        color: #bdbdbd;
+                        top: 0rem;
+                        font-size: 2rem;
+                        cursor: pointer;
+                    }
+                }
+                &--active {
+                    transform: scale(1) !important;
+                    height: auto !important;
+                }
+                &--sub {
+                    transform: scale(0);
+                    height: 0;
+                    transition: all 0.5s;
+                    & > li {
+                        @include flexJustifyAlign(flex-start,center);
+                        position: relative;
+                        &:first-child {
+                            padding-top: 2rem;
+                        }
+                        padding: 1rem;
+                        font-weight: 600;
+                        font-size: 1.5rem;
+                        &:hover > a {
+                            color: $color-red;
+                        }
+                    }
+                }
+            }
+        }
+        &__news {
+            &--item {
+                @include flexJustifyAlign(flex-start,center);
+                background-color: $white;
+                margin-bottom: 1rem;
+                padding: 1.6rem 0.8rem;
+                & > img {
+                    width: 25%;
+                    align-self: start;
+                }
+                & > div {
+                    padding-left: 1.6rem;
+                    flex: 1;
+                    font-weight: 600;
+                    & > p {
+                        margin-bottom: 0.5rem;
+                    }
+                    & > div {
+                        font-size: 1.4rem;
+                        color: $color-red;
+                        @include flexJustifyAlign(flex-start,center);
+                        gap: 1rem;
+                    }
                 }
             }
         }

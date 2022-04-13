@@ -9,6 +9,8 @@ const modalSearchClose = document.querySelector('.modal__search--close');
 const bannerTopLeftUl = document.querySelector('.banner__top--left--ul');
 const bannerTopLeftContent = document.querySelector('.banner__top--left--content');
 
+const detailBlogCatelog = document.querySelector('.detail-blog__right--catelog');
+
 const clickOutSide = () => {
     document.body.style = '';
     modal.classList.remove('modal__active', 'modal__black', 'modal__white');
@@ -97,4 +99,28 @@ if (bannerTopLeftUl && bannerTopLeftContent) {
     })
 }
 
-
+if (detailBlogCatelog) {
+    const resetDetailCatelog = (elParam) => {
+        elParam.children[2].classList.remove('detail-blog__right--catelog--active');
+        elParam.children[1].classList.remove('bx-minus');
+        elParam.children[1].classList.add('bx-plus');
+    }
+    [...detailBlogCatelog.children].forEach(el => {
+        el.addEventListener('click', () => {
+            if (el.children.length > 2) {
+                if (el.children[2].classList.contains('detail-blog__right--catelog--active')) {
+                    [...detailBlogCatelog.children].forEach(el_ => {
+                        if (el_.children.length > 2) {
+                            resetDetailCatelog(el_);
+                        }
+                    });
+                }
+                else {
+                    el.children[2].classList.add('detail-blog__right--catelog--active');
+                    el.children[1].classList.add('bx-minus');
+                    el.children[1].classList.remove('bx-plus');
+                }
+            }
+        })
+    })
+}

@@ -1,0 +1,111 @@
+.contact {
+    &__map {
+        width: 100%;
+        & > iframe {
+            width: 100%;
+            border: none;
+            height: 40rem;
+        }
+        margin-bottom: 1rem;
+    }
+    &__main {
+        @include min-md {
+            display: flex;
+            gap: 4rem;
+        }
+        margin-bottom: 2rem;
+        &--left {
+            flex: 1;
+            &--form {
+                margin-top: 2rem;
+                & > div {
+                    margin-bottom: 0.8rem;
+                    display: flex;
+                    flex-direction: row;
+                    @include max-ss(550px) {
+                        &:first-child {
+                            flex-direction: column;
+                        }
+                    }
+                    justify-content: space-between;
+                    &:nth-child(4) span {
+                        height: auto !important;
+                    }
+                    & > div {
+                        @include min-ss(550px) {
+                            width: calc(50% - 1.5rem);
+                        }
+                        @include max-ss(550px) {
+                            &:nth-child(1) {
+                                margin-bottom: 0.8rem;
+                            }
+                        }
+                        @include flexJustifyAlign(flex-start,center);
+                    }
+                    span {
+                        width: 3.6rem;
+                        height: 3.6rem;
+                        @include flexJustifyAlign(center,center);
+                        background-color: #e9ecef;
+                        color: #444;
+                        border-right: none;
+                        border: 0.1rem solid #ddd;
+                    }
+                    input {
+                        padding: 0rem 1.2rem;
+                        font-size: 1.6rem;
+                        flex: 1;
+                        height: 3.6rem;
+                        color: #0E0E0E;
+                        border: 0.1rem solid #ddd;
+                    }
+                    textarea {
+                        font-family: $font-main;
+                        padding: 1.2rem;
+                        font-size: 1.6rem;
+                        flex: 1;
+                        height: 15.5rem;
+                        color: #0E0E0E;
+                        border: 0.1rem solid #ddd;
+                    }
+                }
+                button {
+                    margin-bottom: 2rem;
+                    height: 3.8rem;
+                    padding: 0rem 1.2rem;
+                    background-color: $color-red;
+                    color: $white;
+                    font-weight: 600;
+                    border: none;
+                    transition: all 5s;
+                    &:hover {
+                        background-color: $color-red-hover;
+                    }
+                }
+            }
+        }
+        &--right {
+            @include max-md {
+                margin-bottom: 3rem;
+            }
+            @include min-md {
+                width: 30%;
+            }
+            ul {
+                margin-top: 2rem;
+                li {
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                    padding: 0.8rem 0rem;
+                    @include flexJustifyAlign(flex-start,center);
+                    gap: 1rem;
+                    span {
+                        &:nth-child(1) {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
