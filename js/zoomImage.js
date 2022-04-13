@@ -13,7 +13,7 @@ function imageZoom(imgID, resultID) {
     cy = 1;
     /* Set background properties for the result DIV */
     result.style.backgroundImage = "url('" + img.src + "')";
-    result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+    result.style.backgroundSize = (500 * cx) + "px " + (500 * cy) + "px";
     /* Execute a function when someone moves the cursor over the image, or the lens: */
     lens.addEventListener("mousemove", moveLens);
     img.addEventListener("mousemove", moveLens);

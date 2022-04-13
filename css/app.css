@@ -205,6 +205,14 @@ img {
   height: 20rem;
 }
 
+.scroll__slider {
+  overflow: hidden;
+}
+
+.scroll__slider--main {
+  transition: all 0.6s;
+}
+
 .header {
   background-color: #FFF1E2;
   position: sticky;
@@ -1385,6 +1393,56 @@ img {
   margin-bottom: 2rem;
 }
 
+.detail-blog {
+  display: flex;
+  gap: 2.8rem;
+}
+
+.detail-blog__left {
+  flex: 1;
+}
+
+.detail-blog__left--content {
+  background-color: #ffffff;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.detail-blog__left--content h1 {
+  text-align: center;
+  font-size: 4rem;
+  line-height: 5.2rem;
+  margin: 1rem 0rem;
+}
+
+.detail-blog__left--content p {
+  margin: 1rem 0rem;
+  line-height: 2.2rem;
+  font-size: 1.6rem;
+}
+
+.detail-blog__left--content img {
+  width: 100%;
+  margin: 1rem 0rem;
+}
+
+.detail-blog__left--content h3 {
+  font-weight: bold;
+  margin: 1rem 0rem;
+}
+
+.detail-blog__right {
+  width: 25%;
+}
+
+.detail-blog__right--top {
+  margin: auto !important;
+}
+
+.detail-blog__right--catelog > li {
+  padding: 1rem;
+}
+
 .item__video {
   margin-top: 1rem;
   display: block;
@@ -1426,21 +1484,28 @@ img {
   }
 }
 
-.banner__top--left > a {
+.banner__top--left--content {
+  display: flex;
+}
+
+.banner__top--left--content > a {
+  width: 100%;
+  flex-shrink: 0;
   display: block;
 }
 
-.banner__top--left > a img {
+.banner__top--left--content > a img {
   width: 100%;
   height: 100%;
 }
 
-.banner__top--left ul {
-  margin-top: -3.5rem;
+.banner__top--left--ul {
+  position: relative;
+  margin-top: -5.5rem;
   display: flex;
 }
 
-.banner__top--left ul li {
+.banner__top--left--ul li {
   cursor: pointer;
   width: calc(100% / 3);
   padding: 1.2rem;
@@ -1455,7 +1520,7 @@ img {
   transition: all 0.5s;
 }
 
-.banner__top--left ul li:hover {
+.banner__top--left--ul li:hover {
   color: #A3080C;
 }
 
